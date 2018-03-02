@@ -10,6 +10,10 @@
   <script src="https://code.jquery.com/jquery-3.2.0.min.js"
   integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
   crossorigin="anonymous"></script>
+  
+  <!-- full screen test -->
+  <link rel="stylesheet" href="Control.FullScreen.css" />
+  <script src="Control.FullScreen.js"></script>
 
   <!-- Leaflet (CSS and JS) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
@@ -72,10 +76,15 @@
     var map = L.map('map', {
       attributionControl: false,
       zoomControl: false,
-      scrollWheelZoom: false,
-  }
+      scrollWheelZoom: false
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
     
+    var map = new L.Map('map', {
+  fullscreenControl: true,
+  fullscreenControlOptions: {
+    position: 'topleft'
+  }
+});
   </script>
 
   <script type="text/javascript" src="google-doc-url.js"></script>
