@@ -12,8 +12,8 @@
   crossorigin="anonymous"></script>
   
   <!-- full screen -->
-  <link rel="stylesheet" href="Control.FullScreen.css" />
-  <script src="Control.FullScreen.js"></script>
+  <link rel="stylesheet" href="scripts/Control.FullScreen.css" />
+  <script src="scripts/Control.FullScreen.js"></script>
 
   <!-- Leaflet (CSS and JS) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
@@ -75,14 +75,21 @@
       attributionControl: false,
       zoomControl: false,
       scrollWheelZoom: false,
+       }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
+  </script>
       
       
       
       
       
-      
-      
-      
+  <script type="text/javascript">  
+     
+  var map = new L.Map('map', {
+  fullscreenControl: true,
+  fullscreenControlOptions: {
+    position: 'topleft'
+  }
+});
       
       
   fullscreenControl: true,
@@ -110,6 +117,7 @@ map.on('exitFullscreen', function(){
 });
       
       
+</script>
       
       
       
@@ -117,10 +125,7 @@ map.on('exitFullscreen', function(){
       
       
       
-      
-    }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
-
-  </script>
+   
  
 
   <script type="text/javascript" src="google-doc-url.js"></script>
