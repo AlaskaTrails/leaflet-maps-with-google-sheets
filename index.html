@@ -68,15 +68,6 @@
 
   <script type="text/javascript">
     var map = L.map('map', {
-      
-      
-      
-      
-
-      
-      
-      
-      
       attributionControl: false,
       zoomControl: false,
       scrollWheelZoom: false,
@@ -84,21 +75,14 @@
     
     var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
     mqi = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png", {subdomains: ['otile1','otile2','otile3','otile4']});,
-    googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {maxZoom: 20, subdomains:['mt0','mt1','mt2','mt3']});
 
-var baseMaps = {
-    "OpenStreetMap": osm,
-    "MapQuestImagery": mqi,
-    "Satellite": googleSat
-};
-
-var overlays =  {//add any overlays here
-
+    var baseMaps = {
+      "OpenStreetMap": osm,
+      "MapQuestImagery": mqi
     };
-
-L.control.layers(baseMaps,overlays, {position: 'bottomleft'}).addTo(map);
     
-    
+   var overlays =  {//add any overlays here};
+   L.control.layers(baseMaps,overlays, {position: 'bottomleft'}).addTo(map);  
   </script>
   
 
