@@ -84,12 +84,12 @@
     
     var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
     mqi = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png", {subdomains: ['otile1','otile2','otile3','otile4']});,
-    var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {maxZoom: 20, subdomains:['mt0','mt1','mt2','mt3']});
+    googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {maxZoom: 20, subdomains:['mt0','mt1','mt2','mt3']});
 
 var baseMaps = {
-    "OpenStreetMap": googleSat,
+    "OpenStreetMap": osm,
     "MapQuestImagery": mqi,
-    "Satellite": osm
+    "Satellite": googleSat
 };
 
 var overlays =  {//add any overlays here
